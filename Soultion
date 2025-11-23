@@ -220,3 +220,29 @@ xor^=x;
 return xor;
 }
 }
+
+
+9.String Compressin
+
+import java.util.*;
+class NGE{
+public static void main(String args[]){
+Scanner kbd=new Scanner(System.in);
+String str=kbd.next();
+System.out.println(str_Compression(str));
+}
+
+static String str_Compression(String s){
+StringBuilder op=new StringBuilder();//aab
+int count=1;
+for(int i=1;i<s.length();i++){
+char c=s.charAt(i);//b
+if(c==s.charAt(i-1)) count++;
+else{ op.append(s.charAt(i-1)).append(count);
+count=1;}
+}
+op.append(s.charAt(s.length()-1)).append(count);
+
+return op.toString();
+}
+}
