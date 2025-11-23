@@ -246,3 +246,40 @@ op.append(s.charAt(s.length()-1)).append(count);
 return op.toString();
 }
 }
+10. Password Checker
+
+import java.util.*;
+class NGE{
+public static void main(String args[]){
+String[] newP={"baacbab","accdb","baacba"};
+String[] oldP={"abdbc","ach","abb"};
+
+List<String> op=passwordCheck(newP,oldP);
+for(String x:op)
+System.out.println(x);
+}
+
+static List<String> passwordCheck(String [] n,String []o){
+List<String> res=new ArrayList<>();
+for(int i=0;i<n.length;i++)
+res.add(isSimilar(n[i],o[i])?"Yes":"No");
+
+return res;
+
+}
+
+static boolean isSimilar(String ne,String ol){
+int i=0,j=0;
+int n=ne.length(),o=ol.length();
+
+while(i<n && j<o){
+char nc=ne.charAt(i);
+char oc=ol.charAt(j);
+char cycle= (nc=='z')?'a':(char)(nc+1);
+if(oc==nc || oc==cycle) j++;
+i++;
+}
+return j==o;
+}
+
+}
