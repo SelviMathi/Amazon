@@ -173,3 +173,27 @@ return max;
 
 }
 
+7.Min Distance
+import java.util.*;
+class NGE{
+public static void main(String args[]){
+Scanner kbd=new Scanner(System.in);
+int n=kbd.nextInt();
+int center[]=new int[n];
+for(int i=0;i<n;i++)
+center[i]=kbd.nextInt();
+int dest[]=new int[n];
+for(int i=0;i<n;i++)
+dest[i]=kbd.nextInt();
+System.out.println(minDist(center,dest));
+}
+
+static int minDist(int []c,int[] d){
+int len=c.length,dis=0;
+Arrays.sort(c);
+Arrays.sort(d);
+for(int i=0;i<len;i++)
+dis=dis+Math.abs(c[i]-d[i]);
+return dis;
+}
+}
