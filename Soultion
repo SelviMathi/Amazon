@@ -121,4 +121,55 @@ public class Balanced_Shipment {
                 l+=2;}
             else
                 l++;  }
+
         System.out.print(res);}}
+
+
+6.MaxPack
+
+import java.util.*;
+class NGE{
+public static void main(String args[]){
+Scanner kbd=new Scanner(System.in);
+int n=kbd.nextInt();
+int cost[]=new int[n];
+for(int i=0;i<n;i++)
+cost[i]=kbd.nextInt();
+System.out.println(maxPack(cost));
+}
+
+static int maxPack(int []arr){
+int len=arr.length;
+Set<Integer> target=new TreeSet<>();
+for(int c:arr)
+target.add(c);
+int l=0,r=len-1;
+while(l<r){
+int t=arr[l]+arr[r];
+target.add(t);
+if(arr[l+1]+arr[r]<=t) l++;
+else r--;
+}
+int max=0;
+for(int T:target){
+int i=0,j=len-1,count=0; 	
+while(i<=j){
+if(arr[j]==T){
+count++;
+j--;
+}
+else if(arr[i]+arr[j]==T){
+i++;
+j--;
+count++;
+}
+else if(arr[i]+arr[j]<T) i++;
+else j--;
+}
+max=Math.max(max,count);
+}
+return max;
+}
+
+}
+
