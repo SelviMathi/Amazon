@@ -1,0 +1,209 @@
+Amazon stores its data on different servers at different locations. From time to time, due to several factors, Amazon needs to move its data from one location to another. This challenge involved keeping track of the locations of Amazon's data and report them at the end of the year.
+
+At the start of the year, Amazon's data was located at n different locations. Over the course of the year, Amazon's data was moved from one server to another m times. Precisely, in the it/ operation, the data was moved from movedFrom[i] to movedTo[i].
+Find the locations of the data after all m moving operations. Return the locations in ascending order.
+Note: It is guaranteed that for any movement of data :
+· There is data at movedFrom[i].
+· There is no data at movedTo[i].
+
+Example
+locations = [1, 7, 6, 8]
+movedFrom = [1, 7, 2]
+movedTo = [2, 9, 5]
+
+Data begins at locations listed in locations. Over the course of the year, the data was moved three times. Data was first moved from moved_from[0] to moved_to[0], from 1 to 2. Next in moved from 7 to 9, and finally from location 2 to 5.
+
+In the end
+ the location where data is present are 5 6 8 9 in ascending order.
+
+Sample input 1
+Location
+4
+1 5 2 6
+Moved from
+4
+1 4 5 7
+Moved to
+4
+4 7 1 3
+Smpale output 1 2 3 6
+
+
+Sample input 2
+location
+3
+1 2 3
+Move from
+2
+1 2
+Move to
+2 
+5 6
+Smaple output
+3 5 6
+*******************************************************************
+
+Data Analysts at Amazon are analyzing sales patterns. Based on their analysis, the team concluded that whenever a limited-period offer is rolled out, there is a spike in sales on the first and last days of the offer. They classify a period of 3 or more days as an offer period if the minimum value of the sales on the first and last days of the period outweight the mainum value of sales on all other
+days in that period.
+
+Problem statement Data analysts define an "offer period" as any contiguous period of days of length at least 3 for which the smaller of the sales on the first and last days is strictly greater than every sales value on the days inside the period.
+
+Formally, given an array sales of n distinct integers (sales[0..n-1]), a pair of indices (i, j) with 0 ≤ i < j < n and j − i + 1 ≥ 3 (equivalently i + 2 ≤ j) defines a period sales[i..j]. This period is an offer period if
+
+min(sales[i], sales[j]) > max(sales[i+1], sales[i+2], ..., sales[j−1]).
+
+Task Given sales, report the number of offer periods.
+
+Constraints
+
+n ≥ 3
+sales contains n distinct integers
+You may assume 1 ≤ n ≤ 2·10^5 for algorithmic considerations
+sales[i] fits in a signed 32-bit integer
+
+Input format
+First line: integer n
+Second line: n space-separated integers sales[0] sales[1] ... sales[n-1]
+
+Output format
+
+A single integer: the number of offer periods
+Corrected example Input: 4 
+3 2 8 6
+
+************************************************************************
+
+
+Validating String with RegEx
+
+You are given a list of strings made up only of the characters 'a' and 'b'.
+Your task is to create a regular expression that matches all strings that start and end with the same letter.
+
+A matching string must satisfy both:
+
+The first character is either 'a' or 'b'
+
+Replace the blank in the code editor with a regular expression that matches exactly those strings that begin and end with the same character (a or b).
+
+The locked code will print:
+
+True for correct matches
+
+False for incorrect matches
+
+Sample input
+5
+a
+b
+ab
+ba
+aba
+
+Sample Output
+True
+True
+False
+False
+True
+
+
+****************************************************
+AWS provides scalable systems. A set of n servers are used for horizontally scaling an application. The goal is to have the computational power of the servers in non-decreasing order. To do so, you can increase the computational power of each server in any contiguous segment by x. Choose the values of x such that after the computational powers are in non-decreasing order, the sum of the x values is minimum.
+Ex: There are n = 5 servers and their computational power = [3, 4, 1, 6, 2].
+Add 3 units to the subarray (2, 4) and 4 units to the subarray (4, 4). The final arrangement of the servers is: [3, 4, 4, 9, 9]. The answer is 3+4=7.
+3	 4	 1	 6	 2
++3	 +3	 +3
+3 	4	 4	 9	 5
+				+4
+3 	4 	4	 9	 9
+Sample Input For Custom Testing
+3 -> n = 3
+3 2 1
+Sample Output : 2
+Explanation :Add 1 unit to subarray (1,2) and 1 unit to subarray (2, 2). The final arrangement of servers is [3, 3, 3].
+Description:Complete the function makePowerNonDecreasing in the editor below.
+makePowerNonDecreasing has the following parameter(s):
+int power[n]: the computational powers of n different servers
+Returns: int: the minimum possible sum of integers required to make the array non-decreasing
+Constraints: 1<=n<= 10^5 		1<= power[i] <=10^5
+
+*****************************************************
+Amazon has multiple delivery centers for the distribution of its goods. In one such center, parcels are arranged in a sequence where the ith parcel has a weight of weight[i]. A shipment is constituted of a contiguous segment of parcels in this arrangement. That is, for 3 parcels arranged with weights [3, 6, 3], a shipment can be formed of parcels with weights [3], [6], [3], [3, 6], [6, 3] and [3, 6, 3] but not with weights [3, 3]. These shipments are to be loaded for delivery and must be balanced. A shipment is said to be balanced if the weight of the last parcel of the shipment is not the maximum weight among all the weights in that shipment. For example, shipment with weights [3, 9, 4, 7] is balanced since the last weight is 7, while the maximum shipment weight is 9. However, the shipment [4, 7, 2, 7] is not balanced.
+Given the weights of n parcels placed in a sequence, find the maximum number of shipments that can be formed such that each parcel belongs to exactly one shipment, each shipment consists of only a contiguous segment of parcels, and each shipment is balanced. If there are no balanced shipments, return 0.
+Sample Input: 5	→weight[] size n = 5
+8 5 4 7 2
+Sample Output: 2 	Explanation:Form balanced shipments as [[8, 5], [4, 7, 2]] or [[8, 5, 4], [7, 2]]. In either case, the maximum number of shipments is 2.
+2 5 4 7 6 1 3 8 9 5 
+
+********************************************
+
+In Amazon's online marketplace, the inventory manager is exploring strategies to enhance product sales. The focus is on creating appealing packages that offer customers a delightful shopping experience. To achieve this, the inventory manager aims to construct packages, each containing at most 2 items, to have an equal total cost across all packages. The total cost of a package is defined as the sum of the costs of the items contained within.
+Formally, given an array cost of size n, representing the costs of individual items, determine the maximum number of packages that can be created, such that each package adheres to the constraint of having at most 2 items, and all packages have the same cost.
+Note that each item can be used in at most one package.
+Example 1
+n=3
+cost = [2,1,3]
+
+Let’s try packages with different total cost:
+Case no.	Possible packages			Total cost		No of packages
+1		[2]						2		1
+2		[1]						1		1
+3		[3] ,[1,2]					3		2
+
+In the above example, It is only possible to create 1 package with cost 2, similarly only one package can be created with cost 1, but with the cost 3 we can create 3 packages, which is the maximum possible packages with each package having same total cost, Hence the total answer is 2.
+
+************************************************
+An AWS client has brought servers and databases from data centers in different parts of the world for their application. For simplicity, let's assume all the servers and data centers are located on a 1-dimensional line. You have been given the task of optimizing the network connection. Each data center must be connected to a server. The positions of n data centers and n servers are given in the form of arrays. Any particular data center, center[i], can deliver to any particular server destination, destination[j]. The lag is defined distance between a data center at location x and a server destination at location y is | x - y|, i.e., the absolute difference between x and y. Determine the minimum lag to establish the entire network.
+Example: There are n = 3 connections, the positions of data centers, center = [1, 2, 2], and the positions of the server destinations, destination = [5, 2, 4].
+The most efficient deliveries are:
+The center at location 1 makes the first connection to the server at location 2.
+The center at location 2 makes the second connection to the server at location 4.
+The center at location 2 makes the third connection to the server at location 5.
+The minimum total lag is = abs(1-2) + abs(2-4) + abs(2-5)=1+2+3=6.
+Function Description:Complete the function getMinDistance in the editor below.
+getMinDistance has the following parameter(s):
+int center[n]: the positions of data centers int destination[n]: the positions of server destinations
+Returns:long int: the minimum lag
+Constraints: 1≤n≤10^5
+1< center[i] <destination[i]< 10^9
+▼Sample Case 0
+Sample Input :
+5		→center[] size n = 5
+3 1 6 8 9	→center [3, 1, 6, 8, 9]
+5		←destination[] size n = 5
+2 3 1 7 9	→ destination [2, 3, 1, 7,9]
+Sample Output : 5
+Explanation:
+You may create the connections as: center = [1, 3, 6, 8, 9] destination = [1, 2, 3, 7, 9] Minimum total distance = abs(1-1) + abs(2-3) + abs(3-6) + abs(7-8) + abs(9-9)=
+0+1+3+1+ 0=5
+
+************************************************************
+Developers at Amazon are working on a new algorithm using the Bitwise XOR operation. Given an array arr of even length n. Developers can perform an operation on a given array which is defined below as many times as necessary: 
+I)Choose two indices L and R, where 0 <= L <= R < N
+ii)let x be the bitwise XOR of all elements of the subarray represented by indices L and R of the given array.
+iii)Assign all elements of the chosen subarray to x.
+Given an integer array arr[], find the minimum number of operations required to make all elements of the given array equal to zero.Note: Bitwise XOR for an array of numbers is determined by examining each bit position across all numbers in the array. If the total count of set bits at a bit-position is odd, the resulting bit in output is set to 1. Otherwise, the resulting bit is set to 0. For example, consider the array [13, 6, 10, 7].
+i)The binary representations are:	13 =1101 	6 =0110       10 =1010     7 =0111 
+ii)The count of set bits for each bit position:
+bit-position 0=>2 (from 13, 7)-> Result: 0	bit-position 1=>3 (from 6,10,7)-> Result: 1
+bit-position 2=>3 (from 13, 6,7)-> Result: 1	bit-position 3=>2 (from 13, 10)-> Result: 0
+Final result:	0110 => 6
+Example:  Arr: 0,2,2,0		choose L=1 and R=2.This corresponds to the subarray [2,2]. The value of x for [2,2] is 0. We replace the elements with 0 making  all elements 0. Hence minimum number of operations required is 1.
+
+
+**********************************************
+Amazon would like to enforce a password policy that when a user changes their password, the new password cannot be similar to the current one.to determine wheather two passwords are similar , they take the new password,choose a set of indices and change the characters at these indices to the next cyclic character ‘a’ is changed to ‘b’,’b’to’c’ and so on, and ‘z’ changes to ‘a’. the password is said to be similar if after applying the operation, the old password is a subsequence of the new password.
+The developers come up with a set of n password change requests. Where newpasswords denotes the array of new passwords and oldpasswords denotes the array of old passwords. For each pair newpasswords[i]and oldpasswords[i], return “yes”if the passwords are similar ,that is , newpasswords[i] become a subsequence of oldpassword[i]after performing the operations, and “no” otherwise.
+
+Note: A subsequence is a sequence that can be derived from the given sequence by deleting zero or more element without changing the order of the remaining elements.
+
+Example:
+The two list of passwords are given as newpasswords = [“baacbab”,”accdb”,”baacba”],and old passwords = [“abdbc”,”ach”,”abb”].
+
+Consider the first pair:newpasswords[0] = “baabab” and oldpasswords = “abdbc”.change “ac” to “bd” at the 3rd and 4th position , and “b” to “c” at the last position .
+
+new password
+b	a	a	c	b	a	b
+old password
+a	b	d	b	c
+
