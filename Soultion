@@ -1,5 +1,38 @@
 1.makePowerNonDecreasing
 
+import java.util.*;
+class NGE{
+public static void main(String args[]){
+Scanner kbd=new Scanner(System.in);
+int n=kbd.nextInt();
+int power[]=new int[n];
+for(int i=0;i<n;i++)
+ power[i]=kbd.nextInt();//3 4 1 6 2
+System.out.println(makePowerNonDecreasing(power));
+}
+static int makePowerNonDecreasing(int []p){
+int sum=0;
+int prev=p[0];
+for(int i=1;i<p.length;i++){
+if(p[i]<prev){
+int diff=prev-p[i];
+sum=sum+diff;
+SumToSubArr(p,i,diff);
+}
+else 
+prev=p[i];
+}
+return sum;
+}
+
+static void  SumToSubArr(int[] a,int s,int va){
+for(int i=s;i<a.length;i++)
+a[i]=a[i]+va;
+}
+}
+
+
+
 
 
 
