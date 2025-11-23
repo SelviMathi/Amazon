@@ -197,3 +197,26 @@ dis=dis+Math.abs(c[i]-d[i]);
 return dis;
 }
 }
+
+
+8.XoT Operation
+import java.util.*;
+class NGE{
+public static void main(String args[]){
+Scanner kbd=new Scanner(System.in);
+int n=kbd.nextInt();
+int xor[]=new int[n];
+for(int i=0;i<n;i++)
+xor[i]=kbd.nextInt();
+
+System.out.println(minXorOp(xor));
+}
+
+static int minXorOp(int []c){
+int xor=0;
+for(int x:c){
+xor^=x;
+}
+return xor;
+}
+}
