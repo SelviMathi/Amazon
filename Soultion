@@ -1,0 +1,25 @@
+1.makePowerNonDecreasing
+
+
+
+
+2.Balanced_Shipment
+
+import java.util.Scanner;
+
+public class Balanced_Shipment {
+    public static void main(String[] args) {
+        Scanner in=new Scanner(System.in);
+        int n=in.nextInt();
+        int[] arr=new int[n];
+        for(int i=0;i<n;i++)
+            arr[i]=in.nextInt();
+        in.close();
+        int l=0,res=0;
+        while(l<arr.length-1){
+            if(arr[l]>arr[l+1]){
+                res++;
+                l+=2;}
+            else
+                l++;  }
+        System.out.print(res);}}
